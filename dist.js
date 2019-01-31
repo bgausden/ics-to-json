@@ -19,7 +19,8 @@ var DESCRIPTION = "DESCRIPTION";
 var SUMMARY = "SUMMARY";
 var LOCATION = "LOCATION";
 var ALARM = "VALARM";
-var keyMap = (_keyMap = {}, _defineProperty(_keyMap, START_DATE, "startDate"), _defineProperty(_keyMap, END_DATE, "endDate"), _defineProperty(_keyMap, DESCRIPTION, "description"), _defineProperty(_keyMap, SUMMARY, "summary"), _defineProperty(_keyMap, LOCATION, "location"), _keyMap);
+var UUID = "UID";
+var keyMap = (_keyMap = {}, _defineProperty(_keyMap, START_DATE, "startDate"), _defineProperty(_keyMap, END_DATE, "endDate"), _defineProperty(_keyMap, DESCRIPTION, "description"), _defineProperty(_keyMap, SUMMARY, "summary"), _defineProperty(_keyMap, LOCATION, "location"), _defineProperty(_keyMap, UUID, "uuid"), _keyMap);
 
 var clean = function clean(string) {
   return unescape(string).trim();
@@ -85,6 +86,9 @@ var icsToJson = function icsToJson(icsData) {
         break;
 
       case LOCATION:
+        currentObj[keyMap[LOCATION]] = clean(value);
+
+      case UUID:
         currentObj[keyMap[LOCATION]] = clean(value);
 
       default:

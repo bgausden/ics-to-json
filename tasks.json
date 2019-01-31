@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "babel watch",
+            "command": "${workspaceFolder}/node_modules/.bin/babel",
+            "args": [
+                "icsToJson.js",
+                "--out-dir",
+                "dist",
+                "-w",
+                "--source-maps"
+            ],
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "problemMatcher": ["$jshint-stylish"]
+        }
+    ]
+}
